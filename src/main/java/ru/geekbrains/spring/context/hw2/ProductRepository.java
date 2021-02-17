@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -23,7 +24,7 @@ public class ProductRepository implements ProductRepositoryInterface {
 
    @Override
    public List<Product> getProducts() {
-      return products;
+      return Collections.unmodifiableList(products);
    }
 
    @Override
